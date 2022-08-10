@@ -180,7 +180,28 @@ def check_win(board_positions):
 # Returns:
 #   string (R, B, or N)
 def check_win_horizontal(board_positions):
+    # B B B B
+    # loop through each position
+    for row in range(6):
+        for column in range(7):
+            # .. check goes here
+            if board_positions[row][column] == "B" and board_positions[row][column + 1] == "B" and board_positions[row][column + 2] == "B" and board_positions[row][column + 3] == "B":
+                # blue won so return
+                # ..
+                return "B"
+
+            elif board_positions[row][column] == "R" and board_positions[row][column + 1] == "R" and board_positions[row][column + 2] == "R" and board_positions[row][column + 3] == "R":
+                # red won so return
+                # ..
+                return "R"
+
+
+    # return
     return "N"
+    
+    # position is going to be another array
+    # if board_positions[row][column] == 'B' and row+1 == 'B' and row+2 == 'B' and row+3 == 'B'
+    # return win for B
 
 
 # Summary:
@@ -188,6 +209,10 @@ def check_win_horizontal(board_positions):
 # Returns:
 #   string (R, B, or N)
 def check_win_vertical(board_positions):
+    # B
+    # B
+    # B
+    # B
     return "N"
 
 
@@ -196,6 +221,10 @@ def check_win_vertical(board_positions):
 # Returns:
 #   string (R, B, or N)
 def check_win_diagonal(board_positions):
+    # R
+    #   R
+    #     R
+    #       R
     return "N"
 
 main()
